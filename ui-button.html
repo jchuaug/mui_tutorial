@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">MUI的按钮</h1>
+		</header>
+		<div class="mui-content">
+			<h5>普通按钮</h5>
+			<button class="mui-btn">默认</button>
+			<button class="mui-btn mui-btn-blue">蓝色按钮（有底色）</button>
+			<button class="mui-btn mui-btn-blue mui-btn-outlined">蓝色按钮（无底色）</button><br />
+			<button class="mui-btn mui-btn-link">链接按钮</button>
+			<hr />
+			<h5>带图标的按钮</h5>
+			<button class="mui-btn mui-icon mui-icon-home">带图标的按钮（图标居左）</button><br /><br />
+			<button class="mui-btn mui-btn-blue mui-icon mui-icon-home">带图标的按钮（图标居左）</button><br /><br />
+			<button class="mui-btn mui-icon mui-icon-home mui-right">带图标的按钮（图标居右）</button><br /><br />
+			<button class="mui-btn mui-btn-blue mui-btn-outlined mui-icon mui-icon-home">带图标的按钮（图标居左）</button>
+			<button class="mui-btn mui-btn-link mui-btn-blue mui-icon mui-icon-back">返回</button>
+			<button class="mui-btn mui-btn-link mui-btn-blue mui-icon mui-icon-arrowright mui-right">下一页</button>
+			<hr />
+			<h5>带数字角标的按钮</h5>
+			<button class="mui-btn mui-btn-blue">带数字角标的按钮<span class="mui-badge mui-badge-blue">1</span></button>
+
+			<hr />
+			<h5>块级按钮</h5>
+			<button id="btn_test1" class="mui-btn mui-btn-block mui-btn-blue" style="height: 40px; padding: 5px 0;">块级按钮</button>
+			
+			<hr />
+			<h5>加载中的按钮 </h5>
+			<button id="btn_loading" data-loading-text="加载中" data-loading-icon="mui-spinner mui-spinner-white" data-loading-icon-position="left" class="mui-btn mui-btn-primary">确认</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			document.getElementById("btn_test1").addEventListener("tap",function(){
+				mui.alert("块级按钮被点击");
+			});
+			
+			document.getElementById("btn_loading").addEventListener("tap",function(){
+				mui(this).button('loading');
+				setTimeout(function(){
+					mui(this).button('reset');
+				}.bind(this),2000)
+			});
+		</script>
+		
+	</body>
+
+</html>

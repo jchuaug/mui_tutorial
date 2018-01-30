@@ -44,3 +44,7 @@
     font-size: 13px;
 }
 
+.mui-table-view-cell.mui-active
+{
+    background-color: #2AC845;
+}﻿​

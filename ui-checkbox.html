@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">MUI的复选框示例</h1>
+		</header>
+		
+		<div class="mui-content">
+			<h5>默认的复选框</h5>
+			<form class="mui-input-group">
+				<div class="mui-input-row mui-checkbox ">
+					<label>checked:true</label>
+					<input name="Checkbox" type="checkbox" checked>
+				</div>
+				<div class="mui-input-row mui-checkbox ">
+					<label>checked:true</label>
+					<input name="Checkbox" type="checkbox" checked>
+				</div>
+				<div class="mui-input-row mui-checkbox ">
+					<label>disabled checkbox</label>
+					<input name="Checkbox" type="checkbox" disabled="true">
+				</div>
+			</form>
+			<h5>复选框居左</h5>
+			<form class="mui-input-group">
+				<div class="mui-input-row mui-checkbox mui-left">
+					<label>checked:true</label>
+					<input name="Checkbox" type="checkbox" checked>
+				</div>
+				<div class="mui-input-row mui-checkbox mui-left ">
+					<label>checked:true</label>
+					<input name="Checkbox" type="checkbox" checked>
+				</div>
+				<div class="mui-input-row mui-checkbox mui-left ">
+					<label>disabled checkbox</label>
+					<input name="Checkbox" type="checkbox" disabled="true">
+				</div>
+			</form>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-input-group').on('change','input',function(){
+				var value=this.checked?'true':'false';
+				this.previousElementSibling.innerText="checked:"+value;
+			});
+		</script>
+	</body>
+
+</html>

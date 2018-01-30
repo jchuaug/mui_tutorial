@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">MUI的消息框</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<div class="mui-button-row" style="text-align: center;">
+
+					<button id='btn_alert' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">警告消息框</button><br /><br />
+					<button id='btn_confirm' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">确认消息框</button><br /><br />
+					<button id='btn_prompt' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">输入对话框</button><br /><br />
+					<button id='btn_toast' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">自动消失的提示框</button>
+				</div>
+
+			</div>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			document.getElementById("btn_alert").addEventListener('tap',function(){
+				mui.alert("警告提示框","警告");
+			});
+			document.getElementById("btn_confirm").addEventListener('tap',function(){
+				var btnArray=['取消','确定'];
+				mui.confirm("确认退出?","提示",btnArray,function(e){
+					console.log("选择的结果是:"+(e.index==0?"取消":"确定"));
+				});
+			});
+			document.getElementById("btn_prompt").addEventListener('tap',function(){
+				var btnArray = ['取消', '确定'];
+				mui.prompt("您的评价是：","输入您的评价...","评价",btnArray,function(e){
+					if(e.index==0){
+						console.log("取消评价");
+					}else{
+						console.log("评价的内容是："+e.value);
+					}
+				});
+			});
+			document.getElementById("btn_toast").addEventListener('tap',function(){
+				mui.toast("这是一个自动消失的消息");
+			});
+			
+		</script>
+	</body>
+
+</html>
